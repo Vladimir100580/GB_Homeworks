@@ -7,7 +7,10 @@ int b = int.Parse(ReadLine()!);
 if (a > b) {
     WriteLine($"Большее число: {a}, меньшее число: {b}");
     }
-else {
+else if (b > a) {
     WriteLine($"Большее число: {b}, меньшее число: {a}");
     }
+    else {
+          WriteLine("Вы ввели равные числа!");  
+         }
     
