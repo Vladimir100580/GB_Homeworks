@@ -1,8 +1,8 @@
 ﻿using static System.Console;
 
-Write("Введитет первое число: ");
+Write("Введите первое число: ");
 int a = int.Parse(ReadLine()!);
-Write("Введитет второе число: ");
+Write("Введите второе число: ");
 int b = int.Parse(ReadLine()!);
 if (a > b) {
     WriteLine($"Большее число: {a}, меньшее число: {b}");
