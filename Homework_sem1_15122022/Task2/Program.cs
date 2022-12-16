@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using static System.Console;
+
+Write("Введитет первое число: ");
+int a = int.Parse(ReadLine()!);
+Write("Введитет второе число: ");
+int b = int.Parse(ReadLine()!);
+if (a > b) {
+    WriteLine($"Большее число: {a}, меньшее число: {b}");
+    }
+else {
+    WriteLine($"Большее число: {b}, меньшее число: {a}");
+    }
+    
