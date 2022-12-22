@@ -1,8 +1,9 @@
 ﻿using static System.Console;
 
-double a = 5;
+Double a = 5;
 
-double b = Math.Round(a, 2);
+Double b = a/3;
+// double b = Math.Round(a, 2);
 //if (Math.Round(a, 0) == Math.Round(a, 2)) b = Math.Round(a, 0);
 
 WriteLine(b);

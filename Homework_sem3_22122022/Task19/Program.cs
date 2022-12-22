@@ -1,7 +1,7 @@
 ﻿using static System.Console;
 
 Write("Введите пятизначное натуральное число:");
-bool isParse=double.TryParse(ReadLine(),out double i);
+bool isParse=double.TryParse(ReadLine(),out double i);  //'double' так как 'TryParse' пропускает десятичные дроби, в нашей задаче этого не нужно. Функция Round(в 10-й строке) работает лишьс double.
 if(!isParse)
 {
     WriteLine("Введено не число");
@@ -18,7 +18,7 @@ if(i <= 10000 || i > 99999)
     return;
 }
 int ii = Convert.ToInt32(i);          //Пришлось погуглить, дабы избежать ошибки несоответствия типов 
-int digit_1 = (ii - ii%10000)/10000;
+int digit_1 = (ii - ii%10000)/10000;  //Скорее всего, можно было продолжить работать с double типом, однако, закралось опасение погрешности в каком-нибдуь 'далеком' разряде десятичной записи, при делении.
 ii = ii - digit_1 * 10000;
 int digit_2 = (ii - ii%1000)/1000;
 ii = ii - digit_2 * 1000;
