@@ -7,7 +7,7 @@ if(!isParse)
     WriteLine("Введено не число");
     return;
 }
-if(i != Math.Round(i,0))
+if(i != Math.Round(i,0)) 
 {
     WriteLine("Число должно быть целым");
     return;
