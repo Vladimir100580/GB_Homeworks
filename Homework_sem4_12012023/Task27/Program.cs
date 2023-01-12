@@ -9,6 +9,14 @@ int sum = SumDigits(A);
 WriteLine($"Сумма цифр в числе {A} равна {sum}");
 
 
+
+
+
+
+
+
+
+
 int SumDigits(int A)
 {
     if (A < 0) A *= -1;
