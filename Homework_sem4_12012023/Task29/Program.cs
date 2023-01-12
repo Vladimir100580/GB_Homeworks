@@ -11,29 +11,19 @@ int n_min = int.Parse(ReadLine()!);
 WriteLine("Введите верхнюю границу диапазона целых чисел: ");
 int n_max = int.Parse(ReadLine()!);
 
-int[] arr = InitArr(n, n_min, n_max);
-PtintArr(arr);
+InitPrintArr(n, n_min, n_max); // т.к. в условии сказано "метод", реализовал и формирование, и вывод - в одном
 
 
 
 
 
-int[] InitArr(int n, int n_min, int n_max)
+
+void InitPrintArr(int n, int n_min, int n_max)
 {
     int[] ar = new int[n];
     for (int i=0; i<n; i++)
     {
         ar[i] = new Random().Next(n_min, n_max);
+        Write($"{ar[i]} ");
     }
-    return ar;
-}
-
-
-void PtintArr(int[] ar)
-{
-    int count = ar.Length;
-    for (int i = 0; i < count; i++)
-        {
-            Write($"{ar[i]} ");
-        }
 }
