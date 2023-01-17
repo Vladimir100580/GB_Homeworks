@@ -10,7 +10,6 @@ string[] parameters = ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntri
 
 int[] array = GetArray(int.Parse(parameters[0]), int.Parse(parameters[1]), int.Parse(parameters[2]));
 
-
 printArray(array);
 WriteLine($"Сумма элементов, стоящих на нечётных позициях: {Sum(array)}");
 
