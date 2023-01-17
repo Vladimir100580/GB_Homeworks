@@ -1,37 +1,44 @@
-﻿// Задача 31: Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9, 9]. 
-// Найдите сумму отрицательных и положительных элементов массива.
+﻿// Напишите программу реализующую методы формирования массива,
+// заполненного случайными положительными трёхзначными числами, и подсчета количества чётных чисел в массиве.
+// [345, 897, 568, 234] -> 2
+
 
 
 using static System.Console;
 Clear();
-Write("Введите размер массива, мин и макс через пробел: ");
-string[] parameters = ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+WriteLine("Введите число элементов в массиве: ");
 
-int[] array = GetArray(int.Parse(parameters[0]), int.Parse(parameters[1]), int.Parse(parameters[2]));
+int n = int.Parse(ReadLine()!);
+int[] array = GetArray(n);
+
 printArray(array);
+int m = FindEvenNumb(array);
+WriteLine($"Четных чисел в массиве: {m}");
 
-int negativeSum = 0;
-int positiveSum = 0;
 
-foreach (int a in array)
+
+int FindEvenNumb(int[] array)
 {
-    negativeSum += a < 0 ? a : 0;
-    positiveSum += a > 0 ? a : 0;
+    int quantity = 0;
+    foreach (int a in array)
+    {
+        if (a%2 == 0) quantity++;
+    }
+    return quantity;
 }
 
-WriteLine($"{negativeSum}   {positiveSum}");
 
-int [] GetArray( int size, int minValue, int maxValue){
-    int[] resultArray = new int [size];
-
+int[] GetArray(int size)
+{
+    int[] resultArray = new int[size];
     Random ran = new Random();
     for (int i = 0; i < size; i++)
     {
-        resultArray[i] = ran.Next(minValue, maxValue +1);
+        resultArray[i] = ran.Next(100, 999);
     }
-
     return resultArray;
 }
+
 
 void printArray(int[] array){
     Write("[");
