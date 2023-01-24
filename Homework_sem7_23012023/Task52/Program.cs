@@ -10,9 +10,8 @@ int[] intParams=Array.ConvertAll(ReadLine()!.Split(new string[]{" ", ";", ",", "
 int[,] array = GetMatrixArray(intParams[0], intParams[1], intParams[2], intParams[3]);
 
 PrintMatrixArray(array);
-
+WriteLine();
 printArray(SearchForAverages(array));
-
 
 
 
@@ -42,7 +41,7 @@ double[] SearchForAverages(int[,] inArray)
         {
             sum += inArray[i, j];
         }
-        avarArray[j] = sum/inArray.GetLength(0); 
+        avarArray[j] = Math.Round(sum/inArray.GetLength(0), 3);  // Лучше округлить, дабы сохранить "относительную красоту" вывода)
         //Write($"{avarArray[j]} , {sum}, {inArray.GetLength(0)}    ");
     }
     return avarArray;
@@ -56,7 +55,7 @@ void PrintMatrixArray(int[,] inArray)
     {
         for (int j = 0; j < inArray.GetLength(1); j++)
         {
-            Write($"{inArray[i, j], 5} ");
+            Write($"{inArray[i, j], 8} ");
         }
         WriteLine();
     }
@@ -64,10 +63,10 @@ void PrintMatrixArray(int[,] inArray)
 
 void printArray(double[] array1){
     Write("[");
-    for (int i = 0; i < array1.Length - 1; i++)
-    {
-        Write($"{array1[i]};  ");
+    for (int i = 0; i < array1.Length; i++)
+    {   
+        if (i == 0) {Write($"{array1[i], 7} ");}
+        else {Write($"{array1[i], 8} ");}
     }
-
-    WriteLine($"{array1[array1.Length - 1]}]");
+    Write("]");
 }
