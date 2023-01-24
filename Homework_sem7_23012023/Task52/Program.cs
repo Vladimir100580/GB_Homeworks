@@ -66,7 +66,7 @@ void printArray(double[] array1){
     Write("[");
     for (int i = 0; i < array1.Length - 1; i++)
     {
-        Write($"{array1[i]}, ");
+        Write($"{array1[i]};  ");
     }
 
     WriteLine($"{array1[array1.Length - 1]}]");
