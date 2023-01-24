@@ -5,7 +5,7 @@ using static System.Console;
 Clear();
 Write("Введите 5 чисел: размерность матрицы (m, n), диапозон значений (min, max) и точность чисел (количество знаков после запятой) через пробел: ");
 
-double[] doubParams=Array.ConvertAll(ReadLine()!.Split(" ",StringSplitOptions.RemoveEmptyEntries), double.Parse);
+double[] doubParams=Array.ConvertAll(ReadLine()!.Split(new string[]{" ", ";"},StringSplitOptions.RemoveEmptyEntries), double.Parse);
 
 double[,] array = GetMatrixArray(doubParams[0], doubParams[1], doubParams[2], doubParams[3], doubParams[4]);
 
@@ -35,7 +35,7 @@ void PrintMatrixArray(double[,] inArray)
     {
         for (int j = 0; j < inArray.GetLength(1); j++)
         {
-            Write($"{inArray[i, j], 10} ");  
+            Write($"{inArray[i, j], 10} ");
         }
         WriteLine();
     }
