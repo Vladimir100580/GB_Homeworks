@@ -60,11 +60,11 @@ int[,,] GetMatrixArray(int[] inArrN)         // Формируем трехме�
 string MatrixArrayToString(int[,,] inArrM)         // Переводим матрицу в строку
 {
     string st = "";
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < inArrM.GetLength(0); i++)
     {
-        for (int j = 0; j < 2; j++)     
+        for (int j = 0; j < inArrM.GetLength(1); j++)        // конечно, для данной задачи можно было написать двойки
         {
-            for (int k = 0; k < 2; k++)
+            for (int k = 0; k < inArrM.GetLength(2); k++)
             {
                 st += ($"{inArrM[i, j, k]}({i},{j},{k})  ");
             }
