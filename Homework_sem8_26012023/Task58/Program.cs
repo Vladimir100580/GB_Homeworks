@@ -34,7 +34,7 @@ int[,] MatrixMultiplication(int[,] inArray1, int[,] inArray2)
         for (int j = 0; j < inArray2.GetLength(1); j++)                    
         {
             int sum = 0;
-            for (int k = 0; k < inArray2.GetLength(0); k++)                 // ... те самые "строка на столбец"
+            for (int k = 0; k < inArray2.GetLength(0); k++)                 // ... те самые "...строка на столбец"
             {
                 sum += inArray1[i, k] * inArray2[k, j];
             }
