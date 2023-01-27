@@ -57,7 +57,7 @@ int[,,] GetMatrixArray(int[] inArrN)         // Формируем трехме�
 }
 
 
-string MatrixArrayToString(int[,,] inArrM)         // Формируем трехмерную матрицу
+string MatrixArrayToString(int[,,] inArrM)         // Переводим матрицу в строку
 {
     string st = "";
     for (int i = 0; i < 2; i++)
