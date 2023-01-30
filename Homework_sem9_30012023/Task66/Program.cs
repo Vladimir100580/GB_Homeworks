@@ -1,34 +1,16 @@
-﻿using static System.Console;
+﻿// Напишите программу, которая реализует рекурсивный метод нахождения
+// суммы натуральных элементов в промежутке от M до N.
+
+using static System.Console;
 Clear();
-Write("Введите натуральные M и N: ");
+Write("Введите целые M и N: ");
 
-int[] intPar=Array.ConvertAll(ReadLine()!.Split(new string[]{" ", ";", ",", ".", "_", "/"},StringSplitOptions.RemoveEmptyEntries), int.Parse);
+int[] Par=Array.ConvertAll(ReadLine()!.Split(new string[]{" ", ";", ",", ".", "_", "/"},StringSplitOptions.RemoveEmptyEntries), int.Parse);
 
-
-
-
+WriteLine(GetSumm(Par[0], Par[1]));
 
 
-
-
-
-
-// 123
-/* int GetNumbersSum(int num)
+int GetSumm(int M, int N)
 {
-    if (num / 10 == 0) return num%10;
-    
-    else return GetNumbersSum(num/10) + num%10;
-
-} */
-
-/* int result = GetPower(3,5);
-Console.WriteLine(result);
-
-int GetPower(int a, int b)
-{
-    if (b == 1) return a;
-
-    else return GetPower(a, b-1)*a;
-
-} */
+    return (M == N) ? M : (M < N) ? GetSumm(M, N - 1) + N : GetSumm(M, N + 1) + N;
+}
