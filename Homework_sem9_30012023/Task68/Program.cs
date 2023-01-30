@@ -3,42 +3,20 @@
 
 using static System.Console;
 Clear();
-Write("Введите m и n: ");
+Write("Введите неотрицательные чила M и N: ");
 
-int[] intParams=Array.ConvertAll(ReadLine()!.Split(new string[]{" ", ";", ",", ".", "_", "/"},StringSplitOptions.RemoveEmptyEntries), int.Parse);
+int[] Par=Array.ConvertAll(ReadLine()!.Split(new string[]{" ", ";", ",", ".", "_", "/"},StringSplitOptions.RemoveEmptyEntries), int.Parse);
 
-
-
-
+WriteLine(Akker(Par[0], Par[1]));
 
 
 
-
-
-
-
-
-
-
-
-
-
-// 123
-/* int GetNumbersSum(int num)
-{
-    if (num / 10 == 0) return num%10;
-    
-    else return GetNumbersSum(num/10) + num%10;
-
-} */
-
-/* int result = GetPower(3,5);
-Console.WriteLine(result);
-
-int GetPower(int a, int b)
-{
-    if (b == 1) return a;
-
-    else return GetPower(a, b-1)*a;
-
-} */
+int Akker(int M, int N)
+    {
+        while (M != 0)
+        {
+            N = (N == 0) ? 1 : Akker(M, N - 1);
+            M--;
+        }
+        return N + 1;
+    }
